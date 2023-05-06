@@ -36,6 +36,7 @@ conn.connect(function(error){
 });
 
 app.get('/data',(req,res)=>{
+    res.set('Access-Control-Allow-Origin', '*');
     const sql = 'SELECT * FROM blog_data';
     conn.query(sql,(error,results)=>{
         res.send(results);
