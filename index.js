@@ -34,6 +34,9 @@ conn.connect(function(error){
         console.log('Success');
     }
 });
+setInterval(function () {
+    conn.query('SELECT 1');
+}, 5000);
 
 app.get('/data',(req,res)=>{
     res.set('Access-Control-Allow-Origin', '*');
