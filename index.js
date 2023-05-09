@@ -46,6 +46,14 @@ app.get('/data',(req,res)=>{
         console.log(results);
      });
 });
+app.get('/datas',(req,res)=>{
+    res.set('Access-Control-Allow-Origin', '*');
+    const sql = 'SELECT * FROM blog_data';
+    conn.query(sql,(error,results)=>{
+        res.send(results);
+        console.log(results);
+     });
+});
 const connectionParams = {
     useNewUrlParser: true,
     useUnifiedTopology: true,};
