@@ -40,7 +40,7 @@ setInterval(function () {
 
 app.get('/data',(req,res)=>{
     res.set('Access-Control-Allow-Origin', '*');
-    const sql = 'SELECT * FROM blog_data';
+    const sql = 'SELECT * FROM blog_data LIMIT 5';
     conn.query(sql,(error,results)=>{
         res.send(results);
         console.log(results);
