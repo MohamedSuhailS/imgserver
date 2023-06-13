@@ -37,7 +37,11 @@ conn.connect(function(error){
 setInterval(function () {
     conn.query('SELECT 1');
 }, 200);
+app.post("/add", function(req, res) {
 
+    console.log(res);    
+  res.send("Addition - ");
+});
 app.get('/data',(req,res)=>{
     res.set('Access-Control-Allow-Origin', '*');
     const sql = 'SELECT * FROM blog_data1 LIMIT 5';
